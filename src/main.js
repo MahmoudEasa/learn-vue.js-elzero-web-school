@@ -6,10 +6,11 @@ import store from "./store";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "@/filters"; // Global Filters
-
 import "./scss/main.scss";
 import "normalize.css";
+
+import "@/filters"; // Global Filters
+import "@/directives"; // Global Directives
 
 Vue.config.productionTip = false;
 

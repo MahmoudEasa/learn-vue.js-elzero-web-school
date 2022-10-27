@@ -1,7 +1,7 @@
 <template>
   <div class="our-blog">
     <h1>{{ pageName }}</h1>
-    <p>{{ pageDescription }}</p>
+    <p v-format.bold.orange="50">{{ pageDescription }}</p>
     <div class="container">
       <div class="row">
         <div class="col-md-8">

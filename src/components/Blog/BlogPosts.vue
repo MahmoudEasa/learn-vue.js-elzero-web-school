@@ -3,7 +3,7 @@
     <div class="post-box">
       <span class="post-views">{{ post.views }}</span>
       <h3 class="post-title">{{ post.title }}</h3>
-      <span class="post-date">{{ post.date }}</span>
+      <span v-color.bold="'#42b983'" class="post-date">{{ post.date }}</span>
       <p class="post-content">
         {{ post.content | shortenText(30, "(Reade More)") }}
       </p>
@@ -30,6 +30,20 @@ export default {
     removeItem: function (i) {
       const postFilter = this.posts.filter((p) => p.id == i);
       console.log(postFilter[0]);
+    },
+  },
+  filters: {
+    uppercase: function (v) {
+      return v.toUpperCase();
+    },
+  },
+  directives: {
+    color: function (el, binding) {
+      el.style.color = binding.value;
+
+      if (binding.modifiers.bold) {
+        el.style.fontWeight = "bold";
+      }
     },
   },
 };
